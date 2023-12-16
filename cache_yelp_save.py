@@ -14,7 +14,9 @@ latList = location["POINT_Y"].tolist()
 idList = location["OBJECTID"].tolist()
 
 # set up the authentication
-apikey = "Bearer 0AKTgTLgFCgVsKbiogZSMtKognshM9OhhiU9Q33inCcRgzVaTiXoyFtepBKyoaHSkfbHujfwCVtQ7w0xWHZkfVqCmdFCLa3Yc7p9D7fg-vqLHH5oHiS5MdmE4bE-ZXYx"
+# change this with your own API key if necessary
+api_code = "0AKTgTLgFCgVsKbiogZSMtKognshM9OhhiU9Q33inCcRgzVaTiXoyFtepBKyoaHSkfbHujfwCVtQ7w0xWHZkfVqCmdFCLa3Yc7p9D7fg-vqLHH5oHiS5MdmE4bE-ZXYx"
+apikey = "Bearer " + api_code
 headers = {"Authorization": apikey, "accept": "application/json"}
 
 # cache the first 400 search results
