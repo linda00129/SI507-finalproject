@@ -1,6 +1,6 @@
 # SI507-final project
 
-## Oregon Educational Institute Nearby Food Search System
+## The Oregon Educational Institute Nearby Food Search System
 ### About the program
 This program enables users to:
 
