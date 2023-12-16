@@ -5,38 +5,38 @@ if __name__ == "__main__":
     location = f.cache_location_load()
     graphMap, graphZipcode, graphLoc = f.cache_graph_load()
     yelp = f.cache_yelp_load()
-    print("Welcome to the Oregon Eucational Institue Nearby Food Search System!")
+    print("Welcome to the Oregon Educational Institute Nearby Food Search System!")
     print("Please enter which choice you want to contnue with:")
     print(
-        "1\tEnter the name of an educational institude to see its detailed information"
+        "1\tEnter the name of an educational institute to see its detailed information"
     )
     print(
-        "2\tEnter the name of an educational institude to get some recommendaded nearby educational institudes"
+        "2\tEnter the name of an educational institute to get some recommended nearby educational institutes"
     )
     print(
-        "3\tEnter the name of an educational institude to search for nearby food places"
+        "3\tEnter the name of an educational institute to search for nearby food places"
     )
     print("q\tEnter q to quit")
     inp = input("Your choice: ")
     while inp != "q":
         if inp == "1":
             name = input(
-                "\nPlease enter the FULL NAME of an educational institude, case doesn't matter: "
+                "\nPlease enter the FULL NAME of an educational institute, case doesn't matter: "
             )
             if name.lower() not in location["name_low"].tolist():
                 print(
-                    "Sorry, we cannot find the educational institude you entered. Please try again."
+                    "Sorry, we cannot find the educational institute you entered. Please try again."
                 )
             else:
                 df_print = location[location["name_low"] == name.lower()]
                 print(f.location_print_single(df_print))
         elif inp == "2":
             name = input(
-                "\nPlease enter the FULL NAME of an educational institude, case doesn't matter: "
+                "\nPlease enter the FULL NAME of an educational institute, case doesn't matter: "
             )
             if name.lower() not in location["name_low"].tolist():
                 print(
-                    "Sorry, we cannot find the educational institude you entered. Please try again."
+                    "Sorry, we cannot find the educational institute you entered. Please try again."
                 )
             else:
                 nameid = location[location["name_low"] == name.lower()][
@@ -52,7 +52,7 @@ if __name__ == "__main__":
                     dist_below = {key: val for key, val in dist.items() if val <= 10 and key != nameid}
                     if len(dist_below) > 0:
                         print(
-                            "Here are several educational institudes nearest to you: "
+                            "Here are several educational institutes nearest to you: "
                         )
                         dist_sorted = sorted(dist_below.keys(), key=dist_below.get)[:5]
                         for i in dist_sorted:
@@ -63,15 +63,15 @@ if __name__ == "__main__":
                             )
                 else:
                     print(
-                        "Sorry, there doesn't seem to be any other educational institudes near you."
+                        "Sorry, there doesn't seem to be any other educational institutes near you."
                     )
         elif inp == "3":
             name = input(
-                "Please enter the FULL NAME of an educational institude, case doesn't matter: "
+                "Please enter the FULL NAME of an educational institute, case doesn't matter: "
             )
             if name.lower() not in location["name_low"].tolist():
                 print(
-                    "Sorry, we cannot find the educational institude you entered. Please try again."
+                    "Sorry, we cannot find the educational institute you entered. Please try again."
                 )
             else:
                 df_print = location[location["name_low"] == name.lower()]
@@ -120,13 +120,13 @@ if __name__ == "__main__":
                     pass
         print("\nPlease enter which choice you want to contnue with:")
         print(
-            "1\tEnter the name of an educational institude to see its detailed information"
+            "1\tEnter the name of an educational institute to see its detailed information"
         )
         print(
-            "2\tEnter the name of an educational institude to get some recommendaded nearby educational institudes"
+            "2\tEnter the name of an educational institute to get some recommendaded nearby educational institutes"
         )
         print(
-            "3\tEnter the name of an educational institude to search for nearby food places"
+            "3\tEnter the name of an educational institute to search for nearby food places"
         )
         print("q\tEnter q to quit")
         inp = input("Your choice: ")

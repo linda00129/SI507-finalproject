@@ -5,7 +5,10 @@ from collections import deque
 import requests
 import matplotlib.pyplot as plt
 
-my_apikey = "Bearer 0AKTgTLgFCgVsKbiogZSMtKognshM9OhhiU9Q33inCcRgzVaTiXoyFtepBKyoaHSkfbHujfwCVtQ7w0xWHZkfVqCmdFCLa3Yc7p9D7fg-vqLHH5oHiS5MdmE4bE-ZXYx"
+# change this with your own API key if necessary
+api_code = "0AKTgTLgFCgVsKbiogZSMtKognshM9OhhiU9Q33inCcRgzVaTiXoyFtepBKyoaHSkfbHujfwCVtQ7w0xWHZkfVqCmdFCLa3Yc7p9D7fg-vqLHH5oHiS5MdmE4bE-ZXYx"
+
+my_apikey = "Bearer " + api_code
 
 
 def cache_location_load(path="data/EDUCATIONAL_LOCATIONS.csv"):
@@ -338,7 +341,5 @@ def graph_distance(graph, A, locs):
     return dist
 
 
-if __name__ == "__main__":
-    locdf = cache_location_load()
-    subdf = locdf[locdf["OBJECTID"] == 3]
-    print(location_print_single(subdf))
+# if __name__ == "__main__":
+#     pass
